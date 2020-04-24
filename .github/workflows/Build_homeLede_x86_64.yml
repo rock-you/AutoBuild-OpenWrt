@@ -15,8 +15,8 @@ on:
     branches: 
       - master
 
-  #schedule:
-  #  - cron: 0 8 * * 5
+  schedule:
+    - cron: 0 19 * * *
   
   #watch:
   #  types: [started]
@@ -84,5 +84,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt
-        path: openwrt/bin
+        name: homeLede
+        path: homeLede/bin
