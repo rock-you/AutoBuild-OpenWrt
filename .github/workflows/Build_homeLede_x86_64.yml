@@ -73,7 +73,7 @@ jobs:
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE homeLede/.config
         chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && make defconfig
+        cd homeLede && make defconfig
         
     - name: Download package
       working-directory: ./homeLede
