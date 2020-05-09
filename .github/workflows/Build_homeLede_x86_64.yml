@@ -10,9 +10,9 @@ on:
   release:
     types: [published]
 
-  #push:
-    #branches: 
-      #- master
+  push:
+    branches: 
+      - master
 
   schedule:
     - cron: 0 19 * * *
@@ -67,13 +67,13 @@ jobs:
       run: |
         ./prepareCompile.sh
 
-    - name: Configuration Customization - Build_x86_64
-      env:
-        CONFIG_FILE: 'x86_64.config'
-      run: |
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE homeLede/.config
-        chmod +x ./customize.sh && ./customize.sh
-        cd homeLede && make defconfig
+    #- name: Configuration Customization - Build_x86_64
+    #  env:
+    #    CONFIG_FILE: 'x86_64.config'
+    #  run: |
+    #    [ -e $CONFIG_FILE ] && mv $CONFIG_FILE homeLede/.config
+    #    chmod +x ./customize.sh && ./customize.sh
+    #    cd homeLede && make defconfig
         
     - name: Download package
       working-directory: ./homeLede
